@@ -1,0 +1,54 @@
+.month-history {
+  width: 493px;
+  height: 120px;
+  border-radius: 25px;
+  padding: 17px 35px;
+  background: #fff;
+  margin-left: 151px;
+  margin-bottom: 27px;
+  font-family: 'Poppins', sans-serif;
+  &-title {
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0;
+    margin-bottom: 18px;
+    letter-spacing: 0.02em;
+    color: $main-text-color;
+  }
+  &-popular {
+    margin-right: 27px;
+    &__content {
+      display: flex;
+    }
+    &__title {
+      font-weight: normal;
+      font-size: 15px;
+      margin: 0;
+      letter-spacing: 0.02em;
+      color: $main-text-color;
+      margin-bottom: 11px;
+    }
+    &__info {
+      display: flex;
+    }
+    &__color_block {
+      width: 16px;
+      height: 16px;
+      background: #f55557;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+    &__price {
+      font-weight: normal;
+      font-size: 15px;
+      letter-spacing: 0.02em;
+      color: $main-text-color;
+    }
+    &__total-price {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      color: #ff4747;
+    }
+  }
+}

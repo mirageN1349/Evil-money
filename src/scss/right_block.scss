@@ -1,0 +1,119 @@
+.right-block {
+  position: absolute;
+  width: 365px;
+  height: 1024px;
+  right: 0;
+  top: 0;
+  background: #ffffff;
+  box-shadow: 0px 4px 15px rgba(218, 218, 218, 0.25);
+  border-radius: 35px 0px 0px 35px;
+  padding: 44px 0;
+  font-family: 'Poppins', sans-serif;
+
+  &__tabs {
+    width: 100%;
+    border-bottom: 1px solid #eaeaea;
+    display: flex;
+    align-items: center;
+    img {
+      margin-left: 55px;
+      cursor: pointer;
+    }
+    &-title,
+    &-title_active {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 30px;
+      letter-spacing: 0.02em;
+      margin-left: 25px;
+    }
+    &-title_active {
+      color: $main-text-color;
+      &:after {
+        content: '';
+        display: block;
+        width: 103px;
+        height: 5px;
+        background: #5a5a5a;
+        border-radius: 3px;
+        margin-top: 4px;
+      }
+    }
+    &-title {
+      margin-bottom: 10px;
+      color: #aaaaaa;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 20px;
+
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    color: $main-text-color;
+  }
+  &__form {
+    margin-top: 20px;
+    padding: 0 25px;
+  }
+
+  &__change,
+  &__input,
+  &__signin {
+    height: 45px;
+    border: 0px none;
+    box-shadow: rgba(208, 208, 208, 0.5) 4px 4px 10px;
+    background: rgb(255, 255, 255);
+    outline: none;
+    color: rgb(0, 0, 0);
+  }
+
+  &__input {
+    width: 100%;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 12px;
+    padding-left: 20px;
+    &::placeholder {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      color: #c7c6cc;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__change {
+    cursor: pointer;
+    padding: 0 25px;
+    border-radius: 20px;
+    span {
+      letter-spacing: 0.04em;
+      color: $main-text-color;
+      margin-right: 10px;
+      font-size: 15px;
+    }
+  }
+
+  &__signin {
+    border-radius: 25px;
+    padding: 8px;
+    padding: 0 20px;
+    background: rgb(255, 255, 255);
+    font-size: 15px;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(to right, red, fuchsia);
+    cursor: pointer;
+  }
+}
