@@ -1,4 +1,10 @@
-export class Bank_accounts {
+import { Component } from '../../core/Component'
+
+export class Bank_accounts extends Component {
+  constructor() {
+    super({ listeners: [], className: 'history_bank-accounts_wrapper' })
+  }
+
   render() {
     return `
     <div class="history_bank-accounts_wrapper">

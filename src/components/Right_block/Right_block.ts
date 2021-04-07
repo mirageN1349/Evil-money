@@ -1,4 +1,16 @@
-export class Right_block {
+import { Component } from '../../core/Component'
+
+export class Right_block extends Component {
+  constructor() {
+    super({ listeners: ['click'], className: 'right-block' })
+  }
+
+  componentDidMount() {}
+
+  onInput(e: KeyboardEvent) {}
+
+  onClick(e: MouseEvent) {}
+
   render() {
     return `
     <div class="right-block">
@@ -12,6 +24,7 @@ export class Right_block {
       <input
         type="text"
         name="name"
+        id="name"
         class="right-block__input"
         placeholder="Name:"
       />

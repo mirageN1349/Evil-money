@@ -1,12 +1,11 @@
 import { Actions } from './actions'
-import { State } from './Dispatcher'
+import { Action, State } from './Dispatcher'
+import { initialReducer } from './reducers'
 
-export function rootReducer(action: Actions, state: State): State {
-  switch (action) {
+export function rootReducer(action: Action, state: State): State {
+  switch (action.type) {
     case Actions.INITIAL_STATE:
-      console.log('_INIT_')
-      break
+      return initialReducer(action, state)
   }
-
   return state
 }

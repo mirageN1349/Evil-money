@@ -1,4 +1,21 @@
-export class Diagrams {
+import { Component } from '../../core/Component'
+
+import SimpleBar from 'simplebar'
+import 'simplebar/dist/simplebar.css'
+
+export class Diagrams extends Component {
+  constructor() {
+    super({ listeners: [], className: 'index-wrapper' })
+  }
+
+  onClick(e: MouseEvent) {
+    e.preventDefault()
+  }
+
+  componentDidMount() {
+    new SimpleBar(document.getElementById('simple-bar')!)
+  }
+
   render() {
     return `
     <div class="index-wrapper">
@@ -119,7 +136,6 @@ export class Diagrams {
       </div>
     </div>
   </div>
-
     `
   }
 }

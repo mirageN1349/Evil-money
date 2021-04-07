@@ -1,22 +1,32 @@
 import { Actions } from './actions'
 
-export interface State {}
+export interface Action {
+  type: Actions
+  payload: any
+}
+export interface State {
+  initial: string
+}
 
 export class Dispatcher {
-  listeners: any[] // как обозначить массив функций в ts
+  subscribers: any[] // как обозначить массив функций в ts
   constructor(
-    private rootReducer: (action: Actions, state: State) => State,
+    private rootReducer: (action: Action, state: State) => State,
     private state: State
   ) {
-    this.listeners = []
+    this.subscribers = []
   }
 
-  dispatch(action: Actions) {
-    this.rootReducer(action, this.state)
-    this.listeners.forEach((cb: () => any) => cb())
+  dispatch(action: Action) {
+    this.state = this.rootReducer(action, this.state)
+    this.subscribers.forEach((cb: () => void) => cb())
   }
 
-  subscribe(cb: () => any) {
-    this.listeners.push(cb)
+  subscribe(cb: () => void) {
+    this.subscribers.push(cb)
+  }
+
+  getState() {
+    return this.state
   }
 }

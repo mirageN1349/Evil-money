@@ -37,6 +37,7 @@
     "@types/simplebar": "^5.1.2",
     "material-components-web": "^7.0.0",
     "normalize.css": "^8.0.1",
+    "select": "^1.1.2",
     "simplebar": "^5.3.0",
     "ts-loader": "^8.1.0",
     "typescript": "^4.2.3"
