@@ -6,10 +6,11 @@ export interface Action {
 }
 export interface State {
   initial: string
+  inputValue?: string
 }
 
 export class Dispatcher {
-  subscribers: any[] // как обозначить массив функций в ts
+  subscribers: Array<() => void>
   constructor(
     private rootReducer: (action: Action, state: State) => State,
     private state: State

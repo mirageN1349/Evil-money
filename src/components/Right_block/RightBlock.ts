@@ -1,15 +1,11 @@
 import { Component } from '../../core/Component'
 
-export class Right_block extends Component {
+export class RightBlock extends Component {
   constructor() {
-    super({ listeners: ['click'], className: 'right-block' })
+    super({ listeners: [] })
   }
 
   componentDidMount() {}
-
-  onInput(e: KeyboardEvent) {}
-
-  onClick(e: MouseEvent) {}
 
   render() {
     return `
