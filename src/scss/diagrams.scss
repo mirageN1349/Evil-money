@@ -1,0 +1,25 @@
+.diagrams-wrap {
+  position: relative;
+  background: #fff;
+  height: 415px;
+  width: 778px;
+  border-radius: 30px;
+}
+
+.diagram {
+  position: absolute;
+  left: 20px;
+  top: calc(50% - 225px);
+  width: 450px;
+}
+
+.diagram-counter {
+  position: absolute;
+  top: 49%;
+  left: 24%;
+  span {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Poppins;
+  }
+}

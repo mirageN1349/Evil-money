@@ -1,0 +1,90 @@
+.history {
+  margin-top: 30px;
+  width: 524px;
+  height: 423px;
+  border-radius: 30px;
+  background: #fff;
+  padding: 20px 0;
+  font-family: 'Poppins', sans-serif;
+
+  &-title {
+    font-size: 20px;
+    margin: 0;
+    font-style: normal;
+    font-weight: bold;
+    color: $main-text-color;
+    margin-left: 40px;
+    margin-bottom: 27px;
+  }
+  &-wrapper {
+    padding: 0 40px;
+  }
+  &-subtitle {
+    font-style: normal;
+    font-weight: 500;
+    margin: 0;
+    font-size: 18px;
+    color: $main-text-color-2;
+    line-height: 25px;
+    margin-bottom: 11px;
+  }
+  &-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 10px;
+    padding-left: 0;
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid #eaeaea;
+
+    margin-bottom: 22px;
+
+    &__info_wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__image {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+    &__title {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      color: $main-text-color;
+      margin: 0;
+    }
+    &__category {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 16px;
+      color: $main-text-color-2;
+    }
+    &__price {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      color: $main-text-color;
+    }
+  }
+}
+
+.history::-webkit-scrollbar {
+  width: 5px;
+}
+
+.history::-webkit-scrollbar-thumb {
+  background: #c4c4c4;
+  height: 40px;
+  border-radius: 8px;
+}
