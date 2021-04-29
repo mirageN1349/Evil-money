@@ -16,10 +16,14 @@ export class Component {
     this.listeners = options?.listeners || []
   }
 
-  static _render(ComponentProp: any, jsx: string): RenderResult {
+  static _render(
+    ComponentProp: any,
+    jsx: string,
+    newState?: any
+  ): RenderResult {
     const componentProp = new ComponentProp()
     componentProp.componentWillUpdate()
-
+    ComponentProp._setState(componentProp.state, newState)
     const renderResult = {
       component: componentProp,
       jsx,
@@ -53,6 +57,10 @@ export class Component {
             dependency,
             reJsxTagDependency
           )
+
+          if (Dependency?.dependencies?.length) {
+            Dependency._render(Dependency, renderResult.jsx)
+          }
         }
       })
     }
@@ -83,7 +91,9 @@ export class Component {
     return ''
   }
 
-  setState() {}
+  static _setState(prevState: any, newState: any) {
+    console.log(prevState, newState)
+  }
 
   componentDidMount() {}
 
@@ -100,7 +110,7 @@ export class Component {
       this.listeners.forEach((listener: string) => {
         const method = getMethodName(listener)
         // @ts-ignore
-        const cb = this[method] // разобраться с этой ошибкой
+        const cb = this[method].bind(this) // разобраться с этой ошибкой
         if (!cb) {
           throw new Error(
             `Method ${method} not created in component ${Component.name}`

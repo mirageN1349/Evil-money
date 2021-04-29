@@ -1,15 +1,16 @@
-import { Component } from '../../core/Component'
+import { Component } from '../../core/Component';
 
-import SimpleBar from 'simplebar'
-import 'simplebar/dist/simplebar.css'
+import SimpleBar from 'simplebar';
+import 'simplebar/dist/simplebar.css';
 
 export class History extends Component {
+  static dependencies = [];
   constructor() {
-    super({ listeners: [] })
+    super({ listeners: [] });
   }
 
   componentDidMount() {
-    new SimpleBar(document.getElementById('simple-bar')!)
+    new SimpleBar(document.getElementById('simple-bar')!);
   }
 
   render() {
@@ -113,6 +114,6 @@ export class History extends Component {
       </div>
     </div>
   </div>
-    `
+    `;
   }
 }

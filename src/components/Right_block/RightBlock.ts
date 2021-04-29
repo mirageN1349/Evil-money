@@ -1,19 +1,38 @@
-import { Component } from '../../core/Component'
+import { Component } from '../../core/Component';
 
 export class RightBlock extends Component {
+  static dependencies = [];
+  state: any;
   constructor() {
-    super({ listeners: [] })
+    super({ listeners: ['click'] });
+    this.state = {
+      right: 0,
+    };
   }
 
   componentDidMount() {}
 
+  onClick(e: MouseEvent) {
+    const currentTarget: any = e.target;
+
+    if (currentTarget.classList.contains('close')) {
+      this.setState({
+        right: '-370px',
+      });
+    }
+  }
+
+  setState(newState: any) {
+    this.state = newState;
+  }
+
   render() {
     return `
-    <div class="right-block">
+    <div class="right-block" style="right: ${this.state.right}">
     <div class="right-block__tabs">
       <div class="right-block__tabs-title">Бюджет</div>
       <div class="right-block__tabs-title_active">Профиль</div>
-      <img src="/images/right_block/arrow.svg" alt="закрыть" />
+      <img class="close" src="/images/right_block/arrow.svg" alt="закрыть" />
     </div>
     <form class="right-block__form">
       <h2 class="right-block__title">Зарегистрироваться</h2>
@@ -46,6 +65,6 @@ export class RightBlock extends Component {
       </div>
     </form>
   </div>
-    `
+    `;
   }
 }
